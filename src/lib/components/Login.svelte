@@ -1,5 +1,6 @@
 <script>
   import { user } from '../store.js';
+  import { goto } from '$app/navigation';
 
   let email = '';
   let password = '';
@@ -22,6 +23,7 @@
         // トークンをlocalStorageに保存
         localStorage.setItem('access_token', data.access_token);
         localStorage.setItem('refresh_token', data.refresh_token);
+        goto('/');
       } else {
         const errorData = await response.json();
         errorMessage = errorData.error || 'Login failed';
