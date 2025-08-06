@@ -13,7 +13,10 @@
 
 <nav class="bg-gray-800 text-white p-4">
 	<div class="container mx-auto flex justify-between">
-		<a href="/" class="font-bold">CTFLab</a>
+		<div class="flex">
+			<img class="icon" src="/icon.png" >
+			<a href="/" class="font-bold">CTFLab</a>
+		</div>
 		<div>
 			<a href="/" class="px-4">Challenges</a>
 			{#if $user}
@@ -29,3 +32,14 @@
 <main class="container mx-auto p-4">
 	{@render children()}
 </main>
+
+<style>
+	img.icon {
+		width: 100px;
+		margin-right: 2rem;
+	}
+	div.flex {
+		display: flex;
+		align-items: center;
+	}
+</style>
