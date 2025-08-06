@@ -9,7 +9,7 @@
     errorMessage = '';
     successMessage = '';
     try {
-      const response = await fetch('http://localhost:8080/auth/register', {
+      const response = await fetch('https://ctf-forge-backend.onrender.com/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
