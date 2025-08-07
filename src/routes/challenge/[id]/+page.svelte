@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
   import { page } from '$app/stores';
+  import { showToast } from '$lib/store';
 
   let { data } = $props();
   const { challenge } = data;
@@ -30,16 +31,18 @@
     });
 
     const result = await res.json();
+    console.log(result);
 
     if (res.ok) {
       if (result.correct) {
-        alert('Correct!');
+        showToast('Correct!', 'success');
+        goto('/'); // 正解したらホーム画面に遷移
       } else {
-        alert('Failed!');
+        showToast('Failed!', 'error');
       }
       message = result.message;
     } else {
-      message = `Error: ${result.error}`;
+      showToast(result.error || 'An unknown error occurred.', 'error');
     }
   }
 </script>

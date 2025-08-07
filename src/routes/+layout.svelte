@@ -1,6 +1,7 @@
 <script>
 	import '../app.css';
 	import { user } from '../lib/store.js';
+  	import Toast from '../lib/components/Toast.svelte';
 
 	let { children } = $props();
 
@@ -10,6 +11,8 @@
 		localStorage.removeItem('refresh_token');
 	}
 </script>
+
+<Toast />
 
 <nav class="bg-gray-800 text-white p-4">
 	<div class="container mx-auto flex justify-between">
