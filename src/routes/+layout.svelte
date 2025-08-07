@@ -18,7 +18,7 @@
 	<div class="container mx-auto flex justify-between">
 		<div class="flex">
 			<img class="icon" src="/icon.png" >
-			<a href="/" class="font-bold">CTFLab</a>
+			<a href="/" class="font-bold">CTFForge</a>
 		</div>
 		<div>
 			<a href="/" class="px-4">Challenges</a>
